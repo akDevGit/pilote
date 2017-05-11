@@ -1,3 +1,11 @@
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
+pilote_particles:
+    resource: "@PiloteParticlesBundle/Resources/config/routing.yml"
+    prefix:   /
+
+pilote_user:
+    resource: "@PiloteUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+pilote_core:
+    resource: "@PiloteCoreBundle/Resources/config/routing.yml"
+    prefix:   /

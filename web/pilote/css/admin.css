@@ -1,0 +1,11 @@
+/**
+* Admin asside menu
+*/
+
+aside.asideMenu.adminAsideMenu {
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    
+    background-color: #70c782;
+}

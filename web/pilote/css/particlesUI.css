@@ -1,0 +1,24 @@
+/* *** Bundles *** */
+
+ul.bundleList {
+    list-style: none;
+    
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+ul.bundleList li.bundles {
+    background-color: #ffffff;
+    
+    padding: 4px 8px 8px 4px;
+    margin: 6px 12px 6px 12px;
+}
+
+ul.bundleList li.bundles.doNotScanThisBundle {
+    opacity: 0.58;
+}
+
+ul.bundleList li.bundles.particleBundle,
+ul.bundleList.hideVendorBundles li.bundles.vendorBundle {
+    display: none;
+}

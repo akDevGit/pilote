@@ -1,3 +1,3 @@
 pilote_particles_homepage:
-    path:     /
+    path:     /particles/
     defaults: { _controller: PiloteParticlesBundle:Default:index }

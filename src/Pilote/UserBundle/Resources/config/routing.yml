@@ -1,3 +1,7 @@
 pilote_user_homepage:
     path:     /user/
     defaults: { _controller: PiloteUserBundle:Default:index }
+
+pilote_admin_account_creation:
+    path:     /admin/account-creation
+    defaults: { _controller: PiloteUserBundle:Accounts:creation }

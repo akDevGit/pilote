@@ -9,3 +9,16 @@ pilote_user:
 pilote_core:
     resource: "@PiloteCoreBundle/Resources/config/routing.yml"
     prefix:   /
+    
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    
+login:
+    pattern:   /login
+    defaults:  { _controller: PiloteUserBundle:Security:login }
+
+login_check:
+    pattern:   /login_check
+
+logout:
+    pattern:   /logout

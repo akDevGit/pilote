@@ -1,4 +1,4 @@
 services:
-#    pilote_user.example:
-#        class: Pilote\UserBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    pilote_user.roles:
+        class: Pilote\UserBundle\Model\RolesHelper
+        arguments: ['%security.role_hierarchy.roles%']

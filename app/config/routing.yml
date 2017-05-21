@@ -12,6 +12,7 @@ pilote_core:
     
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    prefix:   /
     
 login:
     pattern:   /login

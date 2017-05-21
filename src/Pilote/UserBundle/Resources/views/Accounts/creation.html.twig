@@ -10,5 +10,6 @@
         {{ form_errors(form.username) }}
         {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
     {{ form_end(form) }}
+    <a href="{{ path('fos_user_registration_register') }}">register that way</a>
 </section>
 {% endblock %}

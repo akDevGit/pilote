@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Poppins:300,400,500,600,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ asset('pilote/css/base.css') }}" />
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <script src="{{ asset('vendor/jquery-3.2.1.js') }}" ></script>
+    </head>
+    <body>
+        {% block body %}
+        
+            {% block asideMenu %}
+            <aside class="asideMenu">
+                <p>Here the regular aside menu</p>
+            </aside>
+            {% endblock %}
+        
+            {% block pageContent %}
+            <section class="pageContent">
+            </section>
+            {% endblock %}
+            
+        
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

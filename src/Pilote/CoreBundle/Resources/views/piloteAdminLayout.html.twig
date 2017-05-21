@@ -1,0 +1,12 @@
+{% extends 'PiloteCoreBundle::piloteLayout.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('pilote/css/admin.css') }}" />
+{% endblock %}
+{% block asideMenu %}
+<aside class="asideMenu adminAsideMenu">
+    <p>This is admin</p>
+</aside>
+{% endblock %}
+{% block javascripts %}
+<script src="{{ asset('pilote/js/particlesUI.js') }}" ></script>
+{% endblock %}

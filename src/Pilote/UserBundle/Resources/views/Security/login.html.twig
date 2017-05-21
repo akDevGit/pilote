@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Pilote</title>
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Poppins:300,400,500,600,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ asset('pilote/css/base.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('pilote/css/login.css') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body class="identification">
+        
+        <div class="loginContainer">
+            
+            <h1>Pilote</h1>
+            
+            {% if error %}
+            <div class="alert alert-danger">{{ error.message }}</div>
+            {% endif %}
+            
+            <form action="{{ path('login_check') }}" method="post">
+
+                <div class="usernameContainer inputContainer">
+                    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+                    <label for="username">Identifiant</label>
+                </div>                
+                <div class="passwordContainer inputContainer">
+                    <input type="password" id="password" name="_password" required="required" />
+                    <label for="password">Mot de passe</label>
+                </div>        
+                <div class="rememberMeContainer checkboxContainer">
+                    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                    <label for="remember_me">Se souvenir de moi</label>
+                </div>
+                <div class="logInContainer submitContainer">
+                    <span class="piloteIcons">&#xea3c;</span>
+                    <input type="submit" id="_submit" name="_submit" value="SE CONNECTER" />
+                </div>
+                
+            </form>
+        </div>
+        
+    </body>
+</html>

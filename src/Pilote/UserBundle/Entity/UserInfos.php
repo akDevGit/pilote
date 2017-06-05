@@ -24,42 +24,42 @@ class UserInfos
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255, nullable=true)
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="firstname", type="string", length=255)
+     * @ORM\Column(name="firstname", type="string", length=255, nullable=true)
      */
     private $firstname;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="gender", type="string", length=255)
+     * @ORM\Column(name="gender", type="string", length=255, nullable=true)
      */
     private $gender;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="birthdate", type="date")
+     * @ORM\Column(name="birthdate", type="date", nullable=true)
      */
     private $birthdate;
 
     /**
      * @var bool
      *
-     * @ORM\Column(name="avatar", type="boolean")
+     * @ORM\Column(name="avatar", type="boolean", nullable=true)
      */
     private $avatar;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="avatarURL", type="string", length=255)
+     * @ORM\Column(name="avatarURL", type="string", length=255, nullable=true)
      */
     private $avatarURL;
 

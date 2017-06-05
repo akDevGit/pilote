@@ -1,4 +1,4 @@
 services:
     pilote_user.roles:
         class: Pilote\UserBundle\Model\RolesHelper
-        arguments: ['%security.role_hierarchy.roles%']
+        arguments: ['%security.role_hierarchy.roles%', @security.context]

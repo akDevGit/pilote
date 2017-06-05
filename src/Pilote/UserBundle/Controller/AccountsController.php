@@ -14,6 +14,7 @@ use Pilote\UserBundle\Form\UserContactType;
 use Pilote\UserBundle\Form\UserInfosType;
 use Pilote\UserBundle\Form\UserTeamType;
 use FOS\UserBundle\Util\LegacyFormHelper;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 class AccountsController extends Controller
 {
@@ -21,9 +22,15 @@ class AccountsController extends Controller
         $user = new User();
         
         $formbuilder = $this->get('form.factory')->createBuilder(FormType::class, $user);
-        $roles = $this->get('pilote_user.roles')->getRoles();
-        //var_dump($roles);
-        //var_dump($roles[2]);
+        $registredRoles = $this->get('pilote_user.roles')->getRoles();
+        $roles = [];
+        foreach ($registredRoles as $thisRole) {
+            $roles[$thisRole]= $thisRole;
+        }
+        
+        if (!$this->get('security.context')->isGranted('ROLE_PO')) {
+            var_dump('lalala');
+        }
         
         $formbuilder
             ->add('username', TextType::class)
@@ -33,7 +40,7 @@ class AccountsController extends Controller
             ->add('contact', UserContactType::class)
             ->add('team', UserTeamType::class)
             ->add('roles', ChoiceType::class, array('multiple' => true , 'choices' => $roles))
-            
+            ->add('enabled', CheckboxType::class, array('required' => false, 'data' => true))
             ->add('bip', SubmitType::class);
         
         $form = $formbuilder->getForm();
@@ -53,9 +60,20 @@ class AccountsController extends Controller
     }
     
     public function usersListAction(Request $request) {
+        if ($this->get('security.context')->isGranted('ROLE_SWITCHBOARD')) {
+            var_dump('you gat it');
+        }
+        
         $repository = $this->getDoctrine()->getManager()->getRepository('PiloteUserBundle:User');
         $usersList = $repository->findAll();
         
-        return $this->render('PiloteUserBundle:Accounts:userList.html.twig', array('userList' => $usersList));
+        return $this->render('PiloteUserBundle:Accounts:userList.html.twig', array('usersList' => $usersList));
+    }
+    
+    public function recordAction ($id) {
+        $repository = $this->getDoctrine()->getManager()->getRepository('PiloteUserBundle:User');
+        $userRecord = $repository->find($id);
+        
+        return $this->render('PiloteUserBundle:Accounts:record.html.twig', array('userRecord' => $userRecord));
     }
 }

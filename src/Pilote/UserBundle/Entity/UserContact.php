@@ -24,49 +24,49 @@ class UserContact
     /**
      * @var string
      *
-     * @ORM\Column(name="adress", type="string", length=255)
+     * @ORM\Column(name="adress", type="string", length=255, nullable=true)
      */
     private $adress;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="secundaryAddress", type="string", length=255)
+     * @ORM\Column(name="secundaryAddress", type="string", length=255, nullable=true)
      */
     private $secundaryAddress;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="zipcode", type="string", length=255)
+     * @ORM\Column(name="zipcode", type="string", length=255, nullable=true)
      */
     private $zipcode;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255)
+     * @ORM\Column(name="email", type="string", length=255, nullable=true)
      */
     private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="phone", type="string", length=255)
+     * @ORM\Column(name="phone", type="string", length=255, nullable=true)
      */
     private $phone;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="cellphone", type="string", length=255)
+     * @ORM\Column(name="cellphone", type="string", length=255, nullable=true)
      */
     private $cellphone;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="skype", type="string", length=255)
+     * @ORM\Column(name="skype", type="string", length=255, nullable=true)
      */
     private $skype;
 

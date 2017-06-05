@@ -24,42 +24,42 @@ class UserTeam
     /**
      * @var string
      *
-     * @ORM\Column(name="jobtitle", type="string", length=255)
+     * @ORM\Column(name="jobtitle", type="string", length=255, nullable=true)
      */
     private $jobtitle;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="unit", type="string", length=255)
+     * @ORM\Column(name="unit", type="string", length=255, nullable=true)
      */
     private $unit;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="team", type="string", length=255)
+     * @ORM\Column(name="team", type="string", length=255, nullable=true)
      */
     private $team;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="division", type="string", length=255)
+     * @ORM\Column(name="division", type="string", length=255, nullable=true)
      */
     private $division;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="site", type="string", length=255)
+     * @ORM\Column(name="site", type="string", length=255, nullable=true)
      */
     private $site;
 
     /**
      * @var array
      *
-     * @ORM\Column(name="manager", type="array")
+     * @ORM\Column(name="manager", type="array", nullable=true)
      */
     private $manager;
 

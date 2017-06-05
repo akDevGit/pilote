@@ -5,7 +5,22 @@ security:
             FOS\UserBundle\Model\UserInterface: bcrypt
 
     role_hierarchy:
-        ROLE_ADMIN:       [ROLE_USER, ROLE_PO, ROLE_PM, ROLE_POWA, ROLE_SWITCHBOARD, ROLE_DEV, ROLE_QA, ROLE_PROJET, ROLE_BUSINESS, ROLE_LOGISTIC, ROLE_COMMUNICATION, ROLE_STUDIO, ROLE_EXECUTIVE, ROLE_PENPUSHER, ROLE_MARKETING, ROLE_EBUSINESS]
+        ROLE_EBUSINESS: [ROLE_USER]
+        ROLE_MARKETING: [ROLE_USER]
+        ROLE_PENPUSHER: [ROLE_USER]
+        ROLE_EXECUTIVE: [ROLE_USER]
+        ROLE_STUDIO: [ROLE_USER]
+        ROLE_COMMUNICATION: [ROLE_USER]
+        ROLE_LOGISTIC: [ROLE_USER]
+        ROLE_BUSINESS: [ROLE_USER]
+        ROLE_PROJET: [ROLE_USER]
+        ROLE_DEV: [ROLE_USER, ROLE_PROJET]
+        ROLE_QA: [ROLE_USER, ROLE_DEV, ROLE_PROJET, ROLE_BUSINESS]
+        ROLE_SWITCHBOARD: [ROLE_USER, ROLE_DEV, ROLE_QA, ROLE_PROJET, ROLE_BUSINESS, ROLE_LOGISTIC, ROLE_COMMUNICATION, ROLE_STUDIO, ROLE_EXECUTIVE, ROLE_PENPUSHER, ROLE_MARKETING, ROLE_EBUSINESS]
+        ROLE_POWA: [ROLE_USER, ROLE_SWITCHBOARD]
+        ROLE_PM: [ROLE_USER, ROLE_POWA]
+        ROLE_PO: [ROLE_USER, ROLE_PM]
+        ROLE_ADMIN: [ROLE_USER, ROLE_PO]
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
         
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
@@ -22,15 +37,15 @@ security:
             
         main:
             pattern: ^/
-            anonymous: true
+            anonymous: false
             
             form_login:
                 provider:  fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
-                login_path: login
-                check_path: login_check
+                login_path: /login
+                check_path: /login_check
             logout:
-                path:   logout
+                path:   /logout
                 target: /
                 
     access_control:

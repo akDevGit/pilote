@@ -2,12 +2,23 @@
 
 namespace Pilote\UserBundle\Model;
 
+use Symfony\Component\Security\Core\SecurityContext;
+
 class RolesHelper {
     
     private $rolesHierarchy;
     private $roles;
+    
+    /**
+     * @var SecurityContext
+     */
+    protected $context;
 
-    public function __construct($rolesHierarchy) {
+    /**
+     * @param SecurityContext $context
+     */
+    public function __construct($rolesHierarchy, $context) {
+        $this->context = $context;
         $this->rolesHierarchy = $rolesHierarchy;
     }
 
@@ -18,7 +29,10 @@ class RolesHelper {
 
         $roles = array();
         array_walk_recursive($this->rolesHierarchy, function($val) use (&$roles) {
-            $roles[] = $val;
+            
+            if($this->context->isGranted($val)) {
+                $roles[] = $val;
+            }
         });
 
         return $this->roles = array_unique($roles);

@@ -9,3 +9,7 @@ pilote_admin_account_creation:
 pilote_user_list:
     path:     /user/list
     defaults: { _controller: PiloteUserBundle:Accounts:usersList }
+    
+pilote_user_record:
+    path:     /user/record/{id}
+    defaults: { _controller: PiloteUserBundle:Accounts:record }

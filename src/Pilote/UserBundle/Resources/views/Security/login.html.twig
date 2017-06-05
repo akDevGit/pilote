@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>Pilote</title>
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Poppins:300,400,500,600,700" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="{{ asset('pilote/css/base.css') }}" />
-        <link rel="stylesheet" type="text/css" href="{{ asset('pilote/css/login.css') }}" />
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{ asset('pilote/css/login.css') }}" />
+{% endblock %}
     <body class="identification">
         
         <div class="loginContainer">
@@ -15,10 +8,14 @@
             <h1>Pilote</h1>
             
             {% if error %}
-            <div class="alert alert-danger">{{ error.message }}</div>
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
             
             <form action="{{ path('login_check') }}" method="post">
+                
+                {% if csrf_token %}
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                {% endif %}
 
                 <div class="usernameContainer inputContainer">
                     <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
@@ -41,4 +38,5 @@
         </div>
         
     </body>
-</html>
+
+

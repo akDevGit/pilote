@@ -5,6 +5,7 @@ namespace Pilote\UserBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class UserContactType extends AbstractType
 {
@@ -13,7 +14,7 @@ class UserContactType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('adress')->add('secundaryAddress')->add('zipcode')->add('email')->add('phone')->add('cellphone')->add('skype');
+        $builder->add('adress', TextType::class, array('required' => false))->add('secundaryAddress', TextType::class, array('required' => false))->add('zipcode', TextType::class, array('required' => false))->add('email', TextType::class, array('required' => false))->add('phone', TextType::class, array('required' => false))->add('cellphone', TextType::class, array('required' => false))->add('skype', TextType::class, array('required' => false));
     }
     
     /**

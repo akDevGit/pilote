@@ -3,11 +3,11 @@
 {% block title %}Home{% endblock %}
 
 {% block pageContent %}
-<div>
+<section class="pageContent">
     <p>Bonjour</p>
     <a style="display: block;" href="{{ path('pilote_user_list') }}">Liste des utilisateurs</a>
     <a style="display: block;" href="{{ path('pilote_admin_account_creation') }}">Cree un compte</a>
     <a style="display: block;" href="{{ path('fos_user_registration_register') }}">Registration</a>
     <a style="display: block;" href="{{ path('logout') }}">Log Out</a>
-</div>
+</section>
 {% endblock %}

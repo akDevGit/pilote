@@ -44,6 +44,8 @@ body.identification {
 
 .loginContainer .inputContainer label {
     position: absolute;
+    top: 0;
+    right: 0;
     display: inline-block;
     width: 100%;
     vertical-align: middle;

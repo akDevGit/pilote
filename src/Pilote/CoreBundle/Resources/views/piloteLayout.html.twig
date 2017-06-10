@@ -8,6 +8,7 @@
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <script src="{{ asset('vendor/jquery-3.2.1.js') }}" ></script>
+        <script src="{{ asset('pilote/js/base.js') }}" ></script>
     </head>
     <body>
         {% block body %}
@@ -16,6 +17,17 @@
             <aside class="asideMenu">
                 <p>Here the regular aside menu</p>
             </aside>
+            {% endblock %}
+        
+            {% block controlBar %}
+            <section class="controlBar">
+                <a class="asideMenuToogler notALink" href="#">O</a>
+                <div class="appControl">
+                    <a class="adminControl" href="#">A</a>
+                    <a class="projetControl" href="#">P</a>
+                    <a class="userControl notALink" href="#">U</a>
+                </div>
+            </section>
             {% endblock %}
         
             {% block pageContent %}

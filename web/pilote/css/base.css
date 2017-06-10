@@ -19,6 +19,8 @@
 
 body {
     position: relative;
+    display: inline-block;
+    width: 100%;
     
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
@@ -32,6 +34,10 @@ body {
     box-sizing: border-box;
     padding: 0px 0px 0px 300px;
     margin: 0px 0px 0px 0px;
+}
+
+body.foldedSideMenu {
+    padding: 0px 0px 0px 42px;
 }
 
 * {
@@ -54,17 +60,111 @@ aside.asideMenu {
     top: 0px;
     left: 0px;
     width: 300px;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     
     background-color: #373737;
     
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
+    
+    transition: all 0.14s ease-out;
+}
+
+body.foldedSideMenu aside.asideMenu {
+    width: 42px;
 }
 
 section.pageContent {
     position: relative;
     
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+
+/**
+* Control Bar
+*/
+
+.controlBar {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 42px;
+    
+    background-color: #ffffff;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.controlBar .appControl {
+    float: right;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.controlBar a,
+.controlBar a:link,
+.controlBar a:active,
+.controlBar a:visited {
+    display: inline-block;
+    width: 42px;
+    line-height: 42px;
+    
+    color: #c3c3c3;
+    text-align: center;
+    text-decoration: none;
+    
+    background-color: #ffffff;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    
+    transition: all 0.14s ease-out;
+}
+
+.controlBar a:hover {
+    color: #484848;
+    box-shadow: 8px 2px 21px 0px rgba(132, 132, 132, 0.14);
+}
+
+.controlBar .appControl a:hover {
+    box-shadow: -8px 2px 21px 0px rgba(132, 132, 132, 0.14);
+}
+
+/**
+* Message
+*/
+.message {
+    position: relative;
+    
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: -12px 12px 21px 0px rgba(182, 62, 49, 0.42);
+    
+    box-sizing: border-box;
+    padding: 9px 12px 9px 12px;
+    margin: 0px 0px 26px 0px;
+}
+
+.message:after {
+    position: absolute;
+    bottom: -12px;
+    left: calc(8% - 8px);
+    
+    content: '';
+    
+    border-left: 8px solid transparent; 
+    border-right: 8px solid transparent; 
+    border-top: 12px solid #ffffff;
+    
+    box-sizing: border-box;
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
 }

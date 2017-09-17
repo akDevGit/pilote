@@ -1,1 +1,9 @@
-Hello World!
+{% extends 'PiloteCoreBundle::piloteAdminLayout.html.twig' %}
+{% block pageContent %}
+<section class="pageContent">
+    <h1>Welcome to particle section</h1>
+    <div class="scannedBuild">
+        <a href="{{path('pilote_particles_scansPage')}}" >Access your scanned maps</a>
+    </div>
+</section>
+{% endblock %}

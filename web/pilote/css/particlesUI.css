@@ -1,17 +1,76 @@
-/* *** Bundles *** */
+/* --- ___ Map Setup ___ --- */
+
+/* --- Map Setup --- */
+.scanBundlesParameters {
+    box-sizing: border-box;
+    padding: 4px 12px 4px 12px;
+    margin: 0px 0px 0px 0px;
+}
+
+.scanBundlesParameters span {
+    position: relative;
+    display: inline-block;
+    
+    color: #373737;
+    
+    border: 2px solid transparent;
+    
+    box-sizing: border-box;
+    padding: 4px 6px 2px 6px;
+    margin: 0px 0px 0px 0px;
+}
+
+.scanBundlesParameters span.onAir {
+    color: #DF6659;
+    border: 2px solid #DF6659;
+}
+
+.scanBundlesParameters span input {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+/* --- Bundles --- */
+
+.thisScanResult {
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
 
 ul.bundleList {
     list-style: none;
     
+    box-sizing: border-box;
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
 }
 
 ul.bundleList li.bundles {
+    position: relative;
     background-color: #ffffff;
+    min-height: 60px;
+    line-height: 58px;
     
-    padding: 4px 8px 8px 4px;
+    box-sizing: border-box;
+    padding: 0px 8px 0px 50px;
     margin: 6px 12px 6px 12px;
+}
+
+ul.bundleList li.bundles:after {
+    content: '';
+    display: block;
+    height: 0;
+    overflow: hidden;
+    clear: both;
 }
 
 ul.bundleList li.bundles.doNotScanThisBundle {
@@ -21,4 +80,455 @@ ul.bundleList li.bundles.doNotScanThisBundle {
 ul.bundleList li.bundles.particleBundle,
 ul.bundleList.hideVendorBundles li.bundles.vendorBundle {
     display: none;
+}
+
+ul.bundleList li.bundles .bundleName {
+    display: inline-block;
+    
+    font-size: 16px;
+    line-height: 60px;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+ul.bundleList li.bundles .bundleType {
+    display: block;
+    float: right;
+    
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #ffffff;
+    
+    background-color: #DF6659;
+    border-radius: 12px;
+    box-shadow: 3px 3px 9px rgba(223, 102, 89, 0.25);
+    
+    box-sizing: border-box;
+    padding: 2px 9px 2px 9px;
+    margin: 17px 12px 17px 11px;
+}
+
+ul.bundleList li.bundles .bundleType.craftedType {
+    background-color: #70c782;
+    box-shadow: 3px 3px 9px rgba(112, 199, 130, 0.25);
+    
+    margin: 17px 12px 17px 11px;
+}
+
+ul.bundleList li.bundles .bundleControls {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 22px;
+    height: 60px;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+ul.bundleList li.bundles .bundleControls .bundleControl  {
+    display: inline-block;
+    line-height: 60px;
+    
+    box-sizing: border-box;
+    padding: 0px 19px 0px 19px;
+    margin: 0px 0px 0px 0px;
+}
+
+ul.bundleList li.bundles .bundleControls .bundleControl input {
+    transform: scale(1.4, 1.4);
+    vertical-align: calc(-3px);
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+/* --- Form --- */
+
+.hiddenFormContainer {
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.hiddenFormContainer form.mapSetupForm {
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.hiddenFormContainer form.mapSetupForm div.isVendorContainer,
+.hiddenFormContainer form.mapSetupForm div.mappedBundleContainer  {
+    display: none;
+}
+
+.hiddenFormContainer form.mapSetupForm .doMapContainer {
+    position: relative;
+    text-align: center;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 6px 12px 6px 12px;
+}
+
+.hiddenFormContainer form.mapSetupForm .doMapContainer .validBtn {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 25px;
+    letter-spacing: 0.01em;
+    color: #ffffff;
+    text-align: center;
+    
+    background-color: #DF6659;
+    border: 2px solid #DF6659;
+    
+    box-sizing: border-box;
+    padding: 2px 0px 0px 0px;
+    margin: -43px 0px 0px 0px;
+    
+    transition: all 0.14s ease-out;
+}
+
+.hiddenFormContainer form.mapSetupForm .doMapContainer:hover .validBtn{
+    padding-left: 12px;
+}
+
+.hiddenFormContainer form.mapSetupForm .doMapContainer span.piloteIcons {
+    cursor: pointer;
+    display: inline-block;
+    opacity: 0;
+    
+    content: "\ea3c";
+    font-family: 'piloteIcons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 25px;
+    color: #ffffff;
+    text-align: center;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 28px 0px 0px -190px;
+    
+    transition: all 0.14s ease-out;
+}
+
+
+.hiddenFormContainer form.mapSetupForm .doMapContainer:hover span.piloteIcons {
+    opacity: 1;
+    margin-left: -161px;
+}
+
+/* --- ___ Map ___ --- */
+
+div.loopHole {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 80vh;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+div.mapContainer {
+    position: absolute;
+    
+    background-size: 50px 50px;
+    background-image: linear-gradient(to right, rgba(82, 82, 82, 0.38) 1px, transparent 1px), linear-gradient(to bottom, rgba(82, 82, 82, 0.38) 1px, transparent 1px);
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    
+    /*transform: translate(-50%,-50%);*/
+}
+
+/* --- Wires --- */
+
+.wiresContainer {
+    position: absolute;
+    overflow: visible;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.wiresContainer .componantLevelWires,
+.wiresContainer .entityLevelWires,
+.wiresContainer .bundleLevelWires {
+    position: absolute;
+    overflow: visible;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.wiresContainer .componantLevelWires .wire,
+.wiresContainer .entityLevelWires .wire,
+.wiresContainer .bundleLevelWires .wire {
+    position: absolute;
+    overflow: visible;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+/* --- Connector --- */
+
+.mapContainer .bundleContainer .connector,
+.mapContainer .bundleContainer .entities .entity .connector{
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    
+    border-radius: 12px;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px
+}
+
+/* --- Bundles --- */
+
+.mapContainer .bundleContainer {
+    position: absolute;
+    display: inline-block;
+    min-width: 280px;
+    
+    background-color: #ffffff;
+    border: 2px solid rgba(222, 222, 222, 0.63);
+    border-radius: 6px;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.mapContainer .bundleContainer .bundleName {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 24px;
+    letter-spacing: 0em;
+    
+    border-bottom: 1px solid rgba(222, 222, 222, 0.63);
+    
+    box-sizing: border-box;
+    padding: 4px 12px 4px 12px;
+    margin: 0px 0px 0px 0px;
+}
+
+.mapContainer .bundleContainer .bundleInformations {
+    text-align: left;
+    
+    box-sizing: border-box;
+    padding: 4px 12px 4px 12px;
+    margin: 0px 0px 0px 0px;
+}
+
+.mapContainer .bundleContainer .bundleInformations.noEntity {
+    color: #797979;
+    text-align: center;
+    
+    background-color: #e5e5e5;
+}
+
+.mapContainer .bundleContainer .bundleConnector {
+    background-color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px
+}
+
+/* --- Entities --- */
+
+.mapContainer .bundleContainer .entities {
+    position: relative;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.mapContainer .bundleContainer .entities .entity {
+    position: absolute;
+    min-width: 280px;
+    
+    background-color: #df6659;
+    border-radius: 6px;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.mapContainer .bundleContainer .entities .entity .parentLink {
+    position: absolute;
+    top: 21px;
+    overflow: visible;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.mapContainer .bundleContainer .entities .entity .entityName {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    letter-spacing: 0em;
+    color: #ffffff;
+    
+    border-bottom: 1px solid rgba(222, 222, 222, 0.63);
+    
+    box-sizing: border-box;
+    padding: 4px 12px 4px 12px;
+    margin: 0px 0px 0px 0px;
+}
+
+.mapContainer .bundleContainer .entities .entity .entityConnector {
+    background-color: #DF6659;
+    border: 2px solid #DF6659;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px
+}
+
+/* --- Componant --- */
+
+.mapContainer .bundleContainer .entities .entity .entityComponants {
+    position: relative;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.mapContainer .bundleContainer .entities .entity .entityComponants .componant {
+    position: absolute;
+    min-width: 260px;
+    overflow: hidden;
+    height: 38px;
+    
+    background-color: #5cb85c;
+    border-radius: 6px;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.mapContainer .bundleContainer .entities .entity .entityComponants .componant .componantType {
+    position: absolute;
+    width: 36px;
+    
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 34px;
+    letter-spacing: -0.05em;
+    color: #5cb85c;
+    text-align: center;
+    
+    background-color: #ffffff;
+    
+    box-sizing: border-box;
+    padding: 2px 0px 2px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.mapContainer .bundleContainer .entities .entity .entityComponants .componant .componantName {
+    float: left;
+    
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 38px;
+    letter-spacing: 0em;
+    color: #ffffff;
+    
+    box-sizing: border-box;
+    padding: 0px 6px 0px 41px;
+    margin: 0px 0px 0px 0px;
+}
+
+.mapContainer .bundleContainer .entities .entity .entityComponants .componant .componantGetterAndSetter {
+    float: right;
+    min-width: 33px;
+    
+    background-color: #ffffff;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 8px;
+}
+
+.mapContainer .bundleContainer .entities .entity .entityComponants .componant .componantGetterAndSetter .componantGetter,
+.mapContainer .bundleContainer .entities .entity .entityComponants .componant .componantGetterAndSetter .componantSetter,
+.mapContainer .bundleContainer .entities .entity .entityComponants .componant .componantGetterAndSetter .componantId {
+    display: inline-block;
+    position: relative;
+    width: 16px;
+    height: 38px;
+    
+    box-sizing: border-box;
+    padding: 3px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.hasGetter,
+.isId,
+.hasSetter,
+.hasNoGetter,
+.isntId,
+.hasNoSetter {
+    position: absolute;
+    display: inline-block;
+    top: 14px;
+    left: 1px;
+    width: 10px;
+    height: 10px;
+    
+    background-color: #5cb85c;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    box-shadow: 1px 2px 8px rgba(88, 88, 88, 0.60);
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.hasNoGetter,
+.isntId,
+.hasNoSetter {
+    background-color: #434343;
+}
+
+.hasGetter,
+.hasNoGetter {
+    left: 6px;
 }

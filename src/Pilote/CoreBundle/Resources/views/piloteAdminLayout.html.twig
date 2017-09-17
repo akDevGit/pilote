@@ -1,10 +1,15 @@
 {% extends 'PiloteCoreBundle::piloteLayout.html.twig' %}
-{% block stylesheets %}
+{% block rootStylesheets %}
     <link rel="stylesheet" type="text/css" href="{{ asset('pilote/css/admin.css') }}" />
 {% endblock %}
 {% block asideMenu %}
 <aside class="asideMenu adminAsideMenu">
     <p>This is admin</p>
+    <ul class="piloteAdminSideMenu">
+        <li class="particleEntry directLink">
+            <a href="{{ path('pilote_particles_homepage') }}"><span class="menuLabel">Particles</span></a>
+        </li>
+    </ul>
 </aside>
 {% endblock %}
 {% block javascripts %}

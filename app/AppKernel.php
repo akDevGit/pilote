@@ -19,6 +19,8 @@ class AppKernel extends Kernel
             new Pilote\ParticlesBundle\PiloteParticlesBundle(),
             new Pilote\CoreBundle\PiloteCoreBundle(),
             new Pilote\UserBundle\PiloteUserBundle(),
+            new Pilote\ProjectsBundle\PiloteProjectsBundle(),
+            new Pilote\IssuesBundle\PiloteIssuesBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

@@ -5,6 +5,7 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Poppins:300,400,500,600,700" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ asset('pilote/css/base.css') }}" />
+        {% block rootStylesheets %}{% endblock %}
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <script src="{{ asset('vendor/jquery-3.2.1.js') }}" ></script>
@@ -15,17 +16,89 @@
         
             {% block asideMenu %}
             <aside class="asideMenu">
-                <p>Here the regular aside menu</p>
+                <ul class="piloteSideMenu">
+                    <li class="dashboardEntry directLink">
+                        <a href="{{ path('pilote_core_homepage') }}"><span class="menuIcons piloteIcons">&#xe902;</span><span class="menuLabel">Tableau de bord</span></a>
+                    </li>
+                    <li class="issuesEntry">
+                        <span class="menuIcons piloteIcons">&#xe907;</span><span class="menuLabel">Anomalies</span>
+                        <ul class="piloteSubMenu">
+                            <li>Vue d&rsquo;ensemble</li>
+                            <li>Rechercher</li>
+                            <li>D&eacute;clarer</li>
+                        </ul>
+                    </li>
+                    <li class="optimisationEntry">
+                        <span class="menuIcons piloteIcons">&#xe908;</span><span class="menuLabel">Optimisations</span>
+                    </li>
+                    <li class="evolutionEntry">
+                        <span class="menuIcons piloteIcons">&#xe90e;</span><span class="menuLabel">&Eacute;volutions</span>
+                        <ul class="piloteSubMenu">
+                            <li><a href="{{ path('pilote_issues_calendar',{'issue' : 'evolutions'}) }}">Calendrier</a></li>
+                        </ul>
+                    </li>
+                    <li class="commitmentsEntry">
+                        <span class="menuIcons piloteIcons">&#xe903;</span><span class="menuLabel">Engagements</span>
+                    </li>
+                    <li class="roadmapEntry">
+                        <span class="menuIcons piloteIcons">&#xe90d;</span><span class="menuLabel">Roadmap</span>
+                    </li>
+                    <li class="inProgressEntry">
+                        <span class="menuIcons piloteIcons">&#xe909;</span><span class="menuLabel">En cours</span>
+                    </li>
+                    <li class="qualityAssuranceEntry">
+                        <span class="menuIcons piloteIcons">&#xe90c;</span><span class="menuLabel">Contr&ocirc;le qualit&eacute;</span>
+                    </li>
+                    <li class="clientsEntry">
+                        <span class="menuIcons piloteIcons">&#xe901;</span><span class="menuLabel">Clients</span>
+                    </li>
+                    <li class="assistanceEntry">
+                        <span class="menuIcons piloteIcons">&#xe910;</span><span class="menuLabel">Assistance</span>
+                    </li>
+                    <li class="meetingsEntry">
+                        <span class="menuIcons piloteIcons">&#xe90b;</span><span class="menuLabel">R&eacute;unions</span>
+                    </li>
+                    <li class="copilEntry">
+                        <span class="menuIcons piloteIcons">&#xe900;</span><span class="menuLabel">COPIL</span>
+                        <ul class="piloteSubMenu">
+                            <li>Vue d&rsquo;ensemble</li>
+                            <li>Roadmap</li>
+                            <li>Sessions</li>
+                        </ul>
+                    </li>
+                    <li class="scheduleEntry">
+                        <span class="menuIcons piloteIcons">&#xe90f;</span><span class="menuLabel">Agenda</span>
+                        <ul class="piloteSubMenu">
+                            <li>Agenda</li>
+                            <li>Reporting</li>
+                        </ul>
+                    </li>
+                    <li class="teamsEntry">
+                        <span class="menuIcons piloteIcons">&#xe912;</span><span class="menuLabel">&Eacute;quipes</span>
+                    </li>
+                    <li class="settingsEntry">
+                        <span class="menuIcons piloteIcons">&#xe913;</span><span class="menuLabel">Param&egrave;tres</span>
+                    </li>
+                </ul>
+                <div class="subMenuContainer">&nbsp;</div>
             </aside>
             {% endblock %}
         
             {% block controlBar %}
             <section class="controlBar">
-                <a class="asideMenuToogler notALink" href="#">O</a>
+                <a class="asideMenuToogler notALink piloteIcons" href="#">&#xe914;</a>
                 <div class="appControl">
-                    <a class="adminControl" href="#">A</a>
-                    <a class="projetControl" href="#">P</a>
-                    <a class="userControl notALink" href="#">U</a>
+                    <a class="adminControl piloteIcons" href="#">&#xe906;</a>
+                    <a class="projetControl piloteIcons" href="#">&#xe905;</a>
+                    <div class="projectsContainer controlContainer">
+                        <ul class="projects">
+                            <li class="defaultMessage">Vous n&rsquo;avez aucun project d&eacute;clar&eacute; pour l&rsquo;instant</li>
+                            <li class="projectCreationContainer">
+                                <a id="createNewProject" href=""><span class="piloteIcons">&#xea0a;</span>&nbsp;Cr&eacute;er un nouveau projet</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="userControl notALink piloteIcons" href="#">&#xe911;</a>
                 </div>
             </section>
             {% endblock %}

@@ -4,11 +4,11 @@
 
 @font-face {
   font-family: 'piloteIcons';
-  src:  url('fonts/piloteIcons.eot');
-  src:  url('fonts/piloteIcons.eot') format('embedded-opentype'),
-    url('fonts/piloteIcons.ttf') format('truetype'),
-    url('fonts/piloteIcons.woff') format('woff'),
-    url('fonts/piloteIcons.svg') format('svg');
+  src:  url('../fonts/icons/piloteFontIcon.eot');
+  src:  url('../fonts/icons/piloteFontIcon.eot') format('embedded-opentype'),
+    url('../fonts/icons/piloteFontIcon.ttf') format('truetype'),
+    url('../fonts/icons/piloteFontIcon.woff') format('woff'),
+    url('../fonts/icons/piloteFontIcon.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -32,12 +32,12 @@ body {
     border: none;
     
     box-sizing: border-box;
-    padding: 0px 0px 0px 300px;
+    padding: 0px 0px 0px 240px;
     margin: 0px 0px 0px 0px;
 }
 
 body.foldedSideMenu {
-    padding: 0px 0px 0px 42px;
+    padding: 0px 0px 0px 48px;
 }
 
 * {
@@ -52,16 +52,61 @@ body.foldedSideMenu {
     font-family: 'piloteIcons';
 }
 
+.clearFix:after {
+    content: '';
+    display: block;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+}
+
+.green {
+    color: #61c882;
+}
+
+/**
+* General styles
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #373737;
+    
+    box-sizing: border-box;
+    padding: 12px 0px 12px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+h1 { font-size: 32px; font-weight: 300; }
+h2 { font-size: 32px; }
+h3 { font-size: 32px; }
+h4 { font-size: 32px; }
+h5 { font-size: 32px; }
+h6 { font-size: 32px; }
+
+.centered {
+    text-align: center;
+}
+
 /**
 * Aside menu
 */
+
 aside.asideMenu {
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 300px;
+    width: 240px;
     min-height: 100vh;
-    height: 100%;
+    
+    font-family: 'Poppins', sans-serif;
     
     background-color: #373737;
     
@@ -72,16 +117,211 @@ aside.asideMenu {
 }
 
 body.foldedSideMenu aside.asideMenu {
-    width: 42px;
+    width: 48px;
 }
 
-section.pageContent {
-    position: relative;
+ul.piloteSideMenu {
+    list-style: none;
     
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #c5c5c5;
+    
+    box-sizing: border-box;
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
 }
 
+ul.piloteSideMenu > li {
+    position: relative;
+    cursor: pointer;
+    
+    background-color: transparent;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    
+    transition: all 0.14s ease-out;
+}
+
+ul.piloteSideMenu > li:hover::before {
+    position: absolute;
+    content: " ";
+    width: 4px; 
+    height: 48px;
+    background: #df6659;
+}
+
+ul.piloteSideMenu > li.deployed {
+    background-color: #df6659;
+}
+
+ul.piloteSideMenu > li.directLink > a {
+    display: block;
+    text-decoration: none;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+ul.piloteSideMenu li span.menuIcons {
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+    
+    font-size: 19px;
+    font-weight: normal;
+    line-height: 48px;
+    color: #c3c3c3;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 15px;
+    margin: 0px 0px 0px 0px;
+    
+    transition: all 0.14s ease-out;
+}
+
+ul.piloteSideMenu li span.menuLabel {
+    display: inline-block;
+    vertical-align: top;
+    
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 48px;
+    color: #c5c5c5;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    
+    transition: all 0.14s ease-out;
+}
+
+ul.piloteSideMenu > li:hover span.menuIcons {
+    color: #ffffff;
+    margin-left: -2px;
+}
+
+ul.piloteSideMenu > li:hover span.menuLabel,
+ul.piloteSideMenu > li.deployed span.menuIcons,
+ul.piloteSideMenu > li.deployed span.menuLabel {
+    color: #ffffff;
+    
+}
+
+/* --- ___ Second level menu ___ --- */
+
+ul.piloteSideMenu > li > ul.piloteSubMenu {
+    list-style: none;
+    display: none;
+    
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: #ffffff;
+    
+    background-color: #2a2a2a;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    
+    transition: all 0.14s ease-out;
+}
+
+ul.piloteSideMenu > li > ul.piloteSubMenu > li {
+    cursor: pointer;
+    
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 30px;
+    color: #ffffff;
+    
+    background-color: #2a2a2a;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 48px;
+    margin: 0px 0px 0px 0px;
+    
+    transition: all 0.14s ease-out;
+}
+
+ul.piloteSideMenu > li > ul.piloteSubMenu > li:hover {
+    background-color: #1a1a1a;
+}
+
+
+ul.piloteSideMenu > li.deployed > ul.piloteSubMenu {
+    display: block;
+}
+
+/* --- ___ Folded side menu ___ --- */
+
+.foldedSideMenu ul.piloteSideMenu > li > span.menuIcons { padding: 0px 0px 0px 13px; }
+.foldedSideMenu ul.piloteSideMenu > li > a > span.menuLabel,
+.foldedSideMenu ul.piloteSideMenu > li > span.menuLabel { display: none; }
+
+.foldedSideMenu ul.piloteSideMenu > li > ul.piloteSubMenu {
+    position: absolute;
+    z-index: 601;
+    top:0px;
+    left: 48px;
+    width: 180px;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    
+    transition: all 0.14s ease-out;
+}
+
+.foldedSideMenu ul.piloteSideMenu > li > ul.piloteSubMenu > li {
+    z-index: 602;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    color: #ffffff;
+    
+    background-color: #2a2a2a;
+    
+    box-sizing: border-box;
+    padding: 4px 12px 4px 12px;
+    margin: 0px 0px 0px 0px;
+    
+    transition: all 0.14s ease-out;
+}
+
+.foldedSideMenu ul.piloteSideMenu > li > ul.piloteSubMenu > li:hover {
+    background-color: #1a1a1a;
+}
+
+.foldedSideMenu div.subMenuContainer {
+    position: fixed;
+    display: none;
+    z-index: 600;
+    width: 180px;
+    height: 100vh;
+    top:0px;
+    left: 48px;
+    
+    background-color: #2a2a2a;
+    
+    box-sizing: border-box;
+    padding: 52px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    
+    transition: all 0.14s ease-out;
+}
+
+.foldedSideMenu div.subMenuContainer.deployed {
+    display: block;
+}
 
 /**
 * Control Bar
@@ -108,15 +348,28 @@ section.pageContent {
     margin: 0px 0px 0px 0px;
 }
 
-.controlBar a,
-.controlBar a:link,
-.controlBar a:active,
-.controlBar a:visited {
+.controlBar .appControl:after {
+    content: '';
+    display: block;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+}
+
+.controlBar > a,
+.controlBar > a:link,
+.controlBar > a:active,
+.controlBar > a:visited,
+.controlBar .appControl > a,
+.controlBar .appControl > a:link,
+.controlBar .appControl > a:active,
+.controlBar .appControl > a:visited {
     display: inline-block;
-    width: 42px;
-    line-height: 42px;
+    width: 42px;    
     
-    color: #c3c3c3;
+    font-size: 20px;
+    line-height: 42px;
+    color: #373737;
     text-align: center;
     text-decoration: none;
     
@@ -129,13 +382,162 @@ section.pageContent {
     transition: all 0.14s ease-out;
 }
 
-.controlBar a:hover {
+.controlBar > a:hover {
     color: #484848;
     box-shadow: 8px 2px 21px 0px rgba(132, 132, 132, 0.14);
 }
 
 .controlBar .appControl a:hover {
     box-shadow: -8px 2px 21px 0px rgba(132, 132, 132, 0.14);
+}
+
+.controlBar .appControl .controlContainer {
+    position: absolute;
+    z-index: 6000;
+    width: 100%;
+    max-width: 300px;
+    right: 0;
+    
+    
+    background-color: #ffffff;
+    border: none;
+    box-shadow: -4px 8px 23px -13px rgba(132, 132, 132, 0.14);
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    
+    transition: all 0.14s ease-out;
+}
+
+.controlBar .appControl  .projectsContainer {
+    display: none;
+}
+
+.controlBar .appControl .controlContainer ul {
+    list-style: none;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.controlBar .appControl .controlContainer ul li {
+    min-height: 30px;
+    
+    box-sizing: border-box;
+    padding: 8px 12px 8px 12px;
+    margin: 0px 0px 0px 0px;
+}
+
+.controlBar .appControl .controlContainer ul li.defaultMessage {
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 14px;
+    color: #959595;
+    text-align: center;
+    
+    background-color: #eaeaea;
+}
+
+.controlBar .appControl .controlContainer ul li.projectCreationContainer {
+    
+}
+
+.controlBar .appControl .controlContainer ul li.projectCreationContainer > a,
+.controlBar .appControl .controlContainer ul li.projectCreationContainer > a:link,
+.controlBar .appControl .controlContainer ul li.projectCreationContainer > a:active,
+.controlBar .appControl .controlContainer ul li.projectCreationContainer > a:visited {
+    display: block;
+    
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 14px;
+    color: #959595;
+    text-align: center;
+    text-decoration: none;
+    
+    box-shadow: none;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    
+    transition: all 0.14s ease-out;
+}
+
+.controlBar .appControl .controlContainer ul li.projectCreationContainer > a:hover {
+    margin: 0px 9px 0px 0px;
+}
+
+.controlBar .appControl .controlContainer ul li.projectCreationContainer > a > span {
+    
+    box-sizing: border-box;
+    padding: 0px 12px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    
+    transition: all 0.14s ease-out;
+}
+
+.controlBar .appControl .controlContainer ul li.projectCreationContainer > a:hover > span {
+    padding-right: 11px;
+    padding-left: 4px;
+}
+
+@media screen and (min-width: 400px) {
+    .controlBar .appControl .controlContainer {
+        right: 42px;
+    }
+}
+
+/* --- ___ Regular side menu ___ --- */
+
+a.asideMenuToogler:link,
+a.asideMenuToogler:active,
+a.asideMenuToogler:visited {
+    position: relative;
+    color: #c3c3c3;
+    padding-left: 6px;
+}
+
+a.asideMenuToogler:hover {
+    color: #373737;
+}
+
+a.asideMenuToogler::before {
+    position: absolute;
+    content: " ";
+    top: 18px;
+    left: 4px;
+    width: 0; 
+    height: 0; 
+    
+    border-left: 4px solid transparent; 
+    border-right: 4px solid transparent; 
+    border-bottom: 6px solid #c3c3c3;
+    
+    transform: rotate(-90deg);
+    transition: all 0.14s ease-out;
+}
+
+a.asideMenuToogler:hover::before {
+    border-bottom: 6px solid #373737;
+}
+
+/* --- ___ Folded side menu ___ --- */
+
+.foldedSideMenu a.asideMenuToogler:link,
+.foldedSideMenu a.asideMenuToogler:active,
+.foldedSideMenu a.asideMenuToogler:visited {
+    padding-left: 0px;
+}
+
+.foldedSideMenu a.asideMenuToogler::before {
+    transform: rotate(90deg);
+    left: auto;
+    right: 2px;
 }
 
 /**
@@ -166,5 +568,28 @@ section.pageContent {
     
     box-sizing: border-box;
     padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+/**
+* Content
+*/
+
+/* --- ___ Elements ___ --- */
+
+.block {
+    background-color: #ffffff;
+    box-shadow: 2px 2px 6px rgba(59, 35, 61, 0.12);
+    border-radius: 4px;
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+section.pageContent {
+    position: relative;
+    
+    padding: 14px 14px 14px 14px;
     margin: 0px 0px 0px 0px;
 }

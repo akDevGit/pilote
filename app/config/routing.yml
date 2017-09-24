@@ -1,13 +1,13 @@
+pilote_doe:
+    resource: "@PiloteDoeBundle/Resources/config/routing.yml"
+    prefix:   /
+
 pilote_issues:
     resource: "@PiloteIssuesBundle/Resources/config/routing.yml"
     prefix:   /
 
 pilote_projects:
     resource: "@PiloteProjectsBundle/Resources/config/routing.yml"
-    prefix:   /
-
-pilote_particles:
-    resource: "@PiloteParticlesBundle/Resources/config/routing.yml"
     prefix:   /
 
 pilote_user:

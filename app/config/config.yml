@@ -4,7 +4,7 @@ imports:
     - { resource: services.yml }
     - { resource: "@PiloteCoreBundle/Resources/config/services.yml" }
     - { resource: "@PiloteUserBundle/Resources/config/services.yml" }
-    - { resource: "@PiloteParticlesBundle/Resources/config/services.yml" }
+    - { resource: "@PiloteDoeBundle/Resources/config/services.yml" }
     - { resource: "@PiloteProjectsBundle/Resources/config/services.yml" }
     - { resource: "@PiloteIssuesBundle/Resources/config/services.yml" }
 

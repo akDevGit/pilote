@@ -244,8 +244,9 @@ div.loopHole {
     margin: 0px 0px 0px 0px;
 }
 
-div.mapContainer {
-    position: absolute;
+.mapContainer {
+    position: relative;
+    list-style: none;
     
     background-size: 50px 50px;
     background-image: linear-gradient(to right, rgba(82, 82, 82, 0.38) 1px, transparent 1px), linear-gradient(to bottom, rgba(82, 82, 82, 0.38) 1px, transparent 1px);
@@ -297,18 +298,20 @@ div.mapContainer {
     position: absolute;
     width: 12px;
     height: 12px;
+    right:0;
     
     border-radius: 12px;
+    background-color: #DF6659;
     
     box-sizing: border-box;
     padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px
+    margin: -14% -22px 0px 0px;
 }
 
 /* --- Bundles --- */
 
 .mapContainer .bundleContainer {
-    position: absolute;
+    position: relative;
     display: inline-block;
     min-width: 280px;
     
@@ -318,7 +321,7 @@ div.mapContainer {
     
     box-sizing: border-box;
     padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
+    margin: 0px 16px 0px 8px;
 }
 
 .mapContainer .bundleContainer .bundleName {
@@ -362,7 +365,8 @@ div.mapContainer {
 /* --- Entities --- */
 
 .mapContainer .bundleContainer .entities {
-    position: relative;
+    position: absolute;
+    min-width: 565px;
     
     box-sizing: border-box;
     padding: 0px 0px 0px 0px;
@@ -370,7 +374,8 @@ div.mapContainer {
 }
 
 .mapContainer .bundleContainer .entities .entity {
-    position: absolute;
+    position: relative;
+    display: inline-block;
     min-width: 280px;
     
     background-color: #df6659;
@@ -418,7 +423,9 @@ div.mapContainer {
 /* --- Componant --- */
 
 .mapContainer .bundleContainer .entities .entity .entityComponants {
-    position: relative;
+    position: absolute;
+    list-style: none;
+    display: block;
     
     box-sizing: border-box;
     padding: 0px 0px 0px 0px;
@@ -426,7 +433,8 @@ div.mapContainer {
 }
 
 .mapContainer .bundleContainer .entities .entity .entityComponants .componant {
-    position: absolute;
+    position: relative;
+    display: inline-block;
     min-width: 260px;
     overflow: hidden;
     height: 38px;

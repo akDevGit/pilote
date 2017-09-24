@@ -240,10 +240,10 @@ $(function() {
     function buildMap () {
         mapContainer = $('.mapContainer');
         setMapContainerSize(mapContainer.attr('data-width'), mapContainer.attr('data-height'));
-        positionBundles();
-        positionEntities();
-        relyEntities();
-        positionComponant();
+        //positionBundles();
+        //positionEntities();
+        //relyEntities();
+        //positionComponant();
         startMapNagivation();
     }
     
